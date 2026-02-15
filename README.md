@@ -43,7 +43,6 @@ Unlike simple polling methods, this system utilizes **FreeRTOS** with a Producer
 | **PE0** | MEMS_INT1 | Data Ready/FIFO Interrupt |
 | **PA2** | USART2_TX | Serial Debug Output (Connect to PC) |
 
-*(Note: Check `main.h` and `.ioc` file for exact pin mappings tailored to your specific hardware setup.)*
 
 ## 📉 Visualizing Data
 The data is output via UART (Baud Rate: 115200) in the following format:
@@ -52,6 +51,7 @@ The data is output via UART (Baud Rate: 115200) in the following format:
 x-> 0.02
 y-> -0.05
 z-> 0.98
+```
 
 You can use standard tools like Putty, TeraTerm, or SerialPlot to view or graph the incoming data in real-time.
 
