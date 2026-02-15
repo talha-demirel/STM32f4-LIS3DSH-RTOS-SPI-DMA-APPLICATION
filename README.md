@@ -3,11 +3,13 @@
 ![Language](https://img.shields.io/badge/language-C-blue.svg) ![Platform](https://img.shields.io/badge/platform-STM32-orange.svg) ![RTOS](https://img.shields.io/badge/RTOS-FreeRTOS-green.svg) ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 ## 📌 Project Overview
+
 This project implements a real-time, high-performance 3-axis accelerometer data logging system using the **STM32F4** microcontroller and the **LIS3DSH** MEMS sensor. 
 
 Unlike simple polling methods, this system utilizes **FreeRTOS** with a Producer-Consumer architecture, **DMA (Direct Memory Access)**, and **FIFO Burst Reads** to minimize CPU intervention. It is designed to handle high-data-rate sensors without blocking the processor, minimize data loss under high data rates.
 
 ## 🚀 Key Features
+
 * **Real-Time OS:** Built on **FreeRTOS** with preemptive scheduling.
 * **Zero-Copy Data Transfer:** Uses **SPI DMA** to read sensor data and **UART DMA** to transmit logs, keeping the CPU free for other tasks.
 * **Producer-Consumer Architecture:**
@@ -45,6 +47,7 @@ Unlike simple polling methods, this system utilizes **FreeRTOS** with a Producer
 
 
 ## 📉 Visualizing Data
+
 The data is output via UART (Baud Rate: 115200) in the following format:
 
 ```text
@@ -55,7 +58,8 @@ z-> 0.98
 
 You can use standard tools like Putty, TeraTerm, or SerialPlot to view or graph the incoming data in real-time.
 
-🔧 How to Run
+## 🔧 How to Run
+
 Clone this repository:
 
 ```bash
@@ -69,5 +73,6 @@ Connect your STM32 board and Flash the code (Run icon).
 
 Open a Serial Terminal (Baud: 115200) to see the accelerometer data.
 
-📄 License
+## 📄 License
+
 This project is licensed under the MIT License - see the LICENSE file for details.
