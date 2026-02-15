@@ -16,7 +16,7 @@ Unlike simple polling methods, this system utilizes **FreeRTOS** with a Producer
     * **Producer Task:** Triggered by hardware interrupts (Data Ready/Watermark), reads data via SPI DMA.
     * **Consumer Task:** Processes raw data, converts to G-force values, and streams via UART.
 * **Robust Synchronization:** Uses **Binary Semaphores** for DMA completion signaling and **Queues** for inter-task communication.
-* **Error Handling:** Implements an advanced "Overrun Recovery" mechanism to detect FIFO saturation and automatically reset the sensor logic to prevent system lockups (Stuck High interrupts).
+* **Error Handling:** Implements a robust status-check mechanism. The system verifies the LIS3DSH Chip ID (WHO_AM_I) before initialization and monitors SPI communication timeouts. It also handles DMA transmission errors via HAL callbacks to prevent task deadlocks.
 * **Power Efficient:** The MCU sleeps (Idle Task) when not processing data interrupts.
 
 ## 🛠 Hardware & Software
