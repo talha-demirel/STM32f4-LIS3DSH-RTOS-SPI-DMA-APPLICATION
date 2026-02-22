@@ -11,10 +11,6 @@
 #include <stdio.h>
 #include <string.h>
 
-/* --- Configuration Macros --- */
-
-
-
 /* --- FreeRTOS Handles --- */
 TaskHandle_t LIS3DSH_Get_Accel_Task_Handle;
 TaskHandle_t LIS3DSH_Write_Accel_Task_Handle;
@@ -22,10 +18,6 @@ TaskHandle_t LIS3DSH_Write_Accel_Task_Handle;
 QueueHandle_t DataQueue_Handle;
 SemaphoreHandle_t USART_DMA_Cmplt_Semphr_h;
 SemaphoreHandle_t SPI_DMA_Cmplt_Semphr_h;
-
-/* --- External Low-Level Functions --- */
-extern void CS_LOW(LIS3DSH_HandleTypeDef *hlis);
-extern void CS_HIGH(LIS3DSH_HandleTypeDef *hlis);
 
 /* --- Private Function Prototypes --- */
 static void LIS3DSH_Get_Accel_Task(void *pvParameters);
