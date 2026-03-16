@@ -29,12 +29,12 @@ static uint8_t LIS3DSH_Write(LIS3DSH_HandleTypeDef *hlis,uint8_t regAddr,uint8_t
 	if(hlis == NULL)															return	LIS3DSH_ERR;
 
 	uint8_t txBuf[2];
-	txBuf[0] = regAddr;
+	txBuf[0] = regAddr & LIS3DSH_SPI_WRITE_BIT;
 	txBuf[1] = data;
 
 	CS_LOW(hlis);
 
-	if(HAL_SPI_Transmit(hlis->hspi, txBuf, sizeof(txBuf), LIS3DSH_SPI_TIMEOUT) == HAL_TIMEOUT){
+	if(HAL_SPI_Transmit(hlis->hspi, txBuf, sizeof(txBuf), LIS3DSH_SPI_TIMEOUT) != HAL_OK){
 
 		CS_HIGH(hlis);
 		return LIS3DSH_ERR_SPI;

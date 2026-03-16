@@ -33,6 +33,7 @@
 
 #define LIS3DSH_WHO_AM_I_ID				(uint8_t)0x3F
 #define LIS3DSH_SPI_READ_BIT   			(uint8_t)0x80	// Read operation mask
+#define LIS3DSH_SPI_WRITE_BIT   		(uint8_t)0x7F	// Write operation mask
 #define LIS3DSH_SPI_MULTI_BIT   		(uint8_t)0x40
 
 					//INIT MACROS
